@@ -31,15 +31,15 @@ However they broke backward compatibility to do it.
 Luckily for me, I was able to quickly create one class to support V2.
 I didn't have to go into all of the classes that I instrumented since the analytics facade was the only thing that was peppered throughout my code.
 
-{% highlight java linenos %}
-```java
-// setup to send data to both flurry and google in Application.onCreate
-AnalyticsFlurry.init(this, "PWBYBRZKPRJKZVMQ****");
-AnalyticsGoogleV2.init(this, 1); // one second dispatch for development
-
-Analytics.track(this); // track action linked to object class name
-Analytics.track(this, "onCreate"); // add method or other label
-Analytics.time(1, "sample"); // track timing data
-Analytics.time(123, "category", "name", "label");    
-```
-{% endhighlight %}
+    {% highlight java linenos %}
+    ```java
+    // setup to send data to both flurry and google in Application.onCreate
+    AnalyticsFlurry.init(this, "PWBYBRZKPRJKZVMQ****");
+    AnalyticsGoogleV2.init(this, 1); // one second dispatch for development
+    
+    Analytics.track(this); // track action linked to object class name
+    Analytics.track(this, "onCreate"); // add method or other label
+    Analytics.time(1, "sample"); // track timing data
+    Analytics.time(123, "category", "name", "label");    
+    ```
+    {% endhighlight %}
